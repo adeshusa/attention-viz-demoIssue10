@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import NotesPanel from "./components/NotesPanel.jsx";
 import VisualizerPanel from "./components/VisualizerPanel.jsx";
@@ -90,8 +91,19 @@ export default function App() {
         ))}
       </div>
 
-      <div className="main-layout">
-        {!isNotesTab && (
+      {/* 🔹 Use a completely different layout for Notes so it's full-width */}
+      {isNotesTab ? (
+        <div
+          className="notes-page-container"
+          style={{
+            padding: "1.5rem 2rem",
+            width: "100%",
+          }}
+        >
+          <NotesPanel />
+        </div>
+      ) : (
+        <div className="main-layout">
           <aside className="sidebar">
             <h3 className="sidebar-title">Table of Contents</h3>
             <ul className="section-list">
@@ -110,16 +122,12 @@ export default function App() {
               ))}
             </ul>
           </aside>
-        )}
 
-        <section className="content-area">
-          {isNotesTab ? (
-            <NotesPanel />
-          ) : (
+          <section className="content-area">
             <ChapterView chapter={chapter} section={activeSection} />
-          )}
-        </section>
-      </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }
