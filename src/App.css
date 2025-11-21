@@ -158,27 +158,18 @@ body,
   margin: 0.5rem 0 1rem;
 }
 
-.notes-layout {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 1rem;
+.notes-wrapper,
+.notes-content {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-.notes-left {
-  flex: 0 0 260px;
+.content-area {
+  width: 100% !important;
 }
 
-.notes-right {
-  flex: 1;
-  padding: 1.2rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  background: white;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  overflow-y: auto;
-  max-height: calc(100vh - 180px);
+main {
+  width: 100% !important;
 }
+
 
